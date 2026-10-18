@@ -143,8 +143,9 @@ public final class DisenchantCommand {
 		book.set(DataComponents.STORED_ENCHANTMENTS, stored.toImmutable());
 
 		// 3. Hand it over (drops at the player's feet if the inventory is full).
-		if (!player.getInventory().add(book)) {
-			player.drop(book, false);
+				if (!player.getInventory().add(book)) {
+			player.level().addFreshEntity(new net.minecraft.world.entity.item.ItemEntity(
+				player.level(), player.getX(), player.getY(), player.getZ(), book));
 		}
 		final Holder<Enchantment> shown = target;
 		final int shownLevel = level;
