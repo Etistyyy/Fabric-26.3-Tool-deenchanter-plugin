@@ -143,8 +143,9 @@ public final class DisenchantCommand {
 		book.set(DataComponents.STORED_ENCHANTMENTS, stored.toImmutable());
 
 		// 3. Hand it over (drops at the player's feet if the inventory is full).
-		player.getInventory().placeItemBackInInventory(book);
-
+		if (!player.getInventory().add(book)) {
+			player.drop(book, false);
+		}
 		final Holder<Enchantment> shown = target;
 		final int shownLevel = level;
 		source.sendSuccess(() -> Component.literal("Moved ")
