@@ -1,0 +1,23 @@
+{
+	"schemaVersion": 1,
+	"id": "enchant_extractor",
+	"version": "${version}",
+	"name": "Enchant Extractor",
+	"description": "Lets players pull a chosen enchantment off the item in their hand and receive it as an enchanted book.",
+	"authors": [
+		"Etisty"
+	],
+	"license": "CC0-1.0",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.etisty.enchantextractor.EnchantExtractor"
+		]
+	},
+	"depends": {
+		"fabricloader": ">=0.19.5",
+		"minecraft": "~26.3",
+		"java": ">=25",
+		"fabric-api": "*"
+	}
+}
